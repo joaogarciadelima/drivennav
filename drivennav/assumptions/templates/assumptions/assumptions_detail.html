@@ -10,20 +10,44 @@
 
 <form method="post">
   {% csrf_token %}
-  {{ form|crispy }}
+  <!-- {{ form|crispy }} -->
+  <div class="row">
+    <div class="col-6">
+      {{ form.brand|as_crispy_field }}
+    </div>
+    <div class="col-6">
+      {{ form.channel|as_crispy_field }}
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-4">
+        {{ form.receivable|as_crispy_field }}
+      </div>
+      <div class="col-md-4">
+        {{ form.taxes|as_crispy_field }}
+      </div>
+      <div class="col-md-4">
+        {{ form.var_sales|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        {{ form.other_suppliers|as_crispy_field }}
+      </div>
+      <div class="col-md-4">
+        {{ form.cogs|as_crispy_field }}
+      </div>
+      <div class="col-md-4">
+        {{ form.tvc|as_crispy_field }}
+      </div>
+    </div>
+
+
   <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 </div>
+</div>
 
-<form>
-  <div class="form-row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
-    </div>
-  </div>
-</form>
 
 {% endblock body %}

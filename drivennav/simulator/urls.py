@@ -1,6 +1,6 @@
 from django.urls import path
 
-from drivennav.data import views
+from drivennav.simulator import views
 
 app_name = "simulator"
 urlpatterns = [

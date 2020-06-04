@@ -8,7 +8,7 @@ from drivennav.period.models import Period
 class Simulator(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, verbose_name="Marca")
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE, verbose_name="Canal")
-    period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name="Mês/Ano")
+    period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name="Período")
     sales_perform = models.DecimalField(
         decimal_places=2, max_digits=15, verbose_name="Sales Perform %"
     )

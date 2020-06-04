@@ -2,45 +2,36 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}{{modulo.titulo}}{% endblock title %}
-{% block description %}Página com detalhes do módulo {{modulo.titulo}}{% endblock description %}
+{% block title %}Simulator{% endblock title %}
+{% block description %}Parametros para simulação{% endblock description %}
 {% block body %}
 <div class="container">
 <form method="post">
-  {% csrf_token %}
-  {{ form|crispy }}
+ {% csrf_token %}
+  <div class="row">
+    <div class="col-6">
+      {{ form.brand|as_crispy_field }}
+    </div>
+    <div class="col-6">
+      {{ form.channel|as_crispy_field }}
+    </div>
+        <div class="col-6">
+      {{ form.period|as_crispy_field }}
+    </div>
+          <div class="col-md-4">
+        {{ form.purchase|as_crispy_field }}
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-md-4">
+        {{ form.sales_perform|as_crispy_field }}
+      </div>
+      <div class="col-md-4">
+        {{ form.discount|as_crispy_field }}
+      </div>
+    </div>
   <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
-
-
-  
 </div>
-
-
-
-
-<!-- <form>
-  <div class="form-group">
-    <label for="formGroupExampleInput">Qual o motivo que o fez procurar o dentista?</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-  </div>
-</form>
-
-<div class="form-group row">
-  <span class="label-text col-md-3 col-form-label"></span>
-  <div class="col-md-9 mt-4">
-    {{ form.motivo}}
-  </div>
-</div>
-<div class="form-group row">
-    <span class="label-text col-md-3 col-form-label">Preço de Custo:</span>
-    <div class="col-md-9">
-      {{ form.paciente }}
-    </div>
-  </div> -->
 
 {% endblock body %}

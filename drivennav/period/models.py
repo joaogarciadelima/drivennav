@@ -4,15 +4,14 @@ from ordered_model.models import OrderedModel
 
 
 class Period(OrderedModel):
-    date = models.DateField(verbose_name="Data")
-    year_month = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, verbose_name="Periodo")
     slug = models.SlugField(unique=True)
 
     class Meta(OrderedModel.Meta):
         pass
 
     def __str__(self):
-        return self.year_month
+        return self.name
 
     def get_absolute_url(self):
         return reverse("channels:detail", kwargs={"slug": self.slug})

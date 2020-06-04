@@ -16,21 +16,20 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Data',
+            name='Simulator',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('initial_inventory', models.DecimalField(decimal_places=2, max_digits=15, verbose_name='Estoque inicial')),
-                ('sales', models.DecimalField(decimal_places=2, max_digits=15, verbose_name='Vendas')),
+                ('sales_perform', models.DecimalField(decimal_places=2, max_digits=15, verbose_name='Sales Perform %')),
                 ('discount', models.DecimalField(decimal_places=2, max_digits=15, verbose_name='Desconto %')),
                 ('purchase', models.DecimalField(decimal_places=2, max_digits=15, verbose_name='Purchase')),
                 ('creation', models.DateTimeField(auto_now_add=True)),
                 ('brand', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='brands.Brand', verbose_name='Marca')),
                 ('channel', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='channel.Channel', verbose_name='Canal')),
-                ('period', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='period.Period')),
+                ('period', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='period.Period', verbose_name='Período')),
             ],
             options={
-                'verbose_name': 'Data',
-                'verbose_name_plural': 'Data',
+                'verbose_name': 'Simulator',
+                'verbose_name_plural': 'Simulators',
             },
         ),
     ]

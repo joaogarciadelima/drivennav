@@ -6,9 +6,9 @@ from drivennav.period.models import Period
 
 
 class Data(models.Model):
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
-    period = models.ForeignKey(Period, on_delete=models.CASCADE)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, verbose_name="Marca")
+    channel = models.ForeignKey(Channel, on_delete=models.CASCADE, verbose_name="Canal")
+    period = models.ForeignKey(Period, on_delete=models.CASCADE, verbose_name="Período")
     initial_inventory = models.DecimalField(
         decimal_places=2, max_digits=15, verbose_name="Estoque inicial"
     )

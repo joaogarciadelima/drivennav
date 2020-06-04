@@ -10,7 +10,6 @@ pytest-cov = "*"
 codecov = "*"
 django-debug-toolbar = "*"
 model-mommy = "*"
-black = "*"
 
 [packages]
 django = "*"
@@ -23,8 +22,8 @@ sentry-sdk = "*"
 collectfast = "*"
 django-ordered-model = "*"
 django-extensions = "*"
-ipython = "*"
 django-crispy-forms = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.8"

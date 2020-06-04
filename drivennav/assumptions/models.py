@@ -4,8 +4,8 @@ from drivennav.channel.models import Channel
 
 
 class Assumptions(models.Model):
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, verbose_name="Marca")
+    channel = models.ForeignKey(Channel, on_delete=models.CASCADE, verbose_name="Canal")
     receivable = models.DecimalField(
         decimal_places=2, max_digits=15, verbose_name="Contas à receber"
     )
