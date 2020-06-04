@@ -1,2 +1,2 @@
 release: python manage.py migrate --noinput
-web: gunicorn djangoaulas.wsgi --log-file -
+web: gunicorn drivennav.wsgi --log-file -
